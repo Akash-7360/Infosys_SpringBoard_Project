@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: defectmind-backend
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DATABASE_URL
+        sync: false
+        # Set this in the Render dashboard to your Supabase PostgreSQL URL:
+        # postgresql+asyncpg://postgres:[YOUR-PASSWORD]@db.[YOUR-PROJECT-REF].supabase.co:5432/postgres
+      - key: BACKEND_CORS_ORIGINS
+        value: "https://*.onrender.com,https://*.vercel.app,http://localhost:3000"
+      - key: CHROMA_PERSIST_DIR
+        value: "./chroma_db"
+      - key: RATE_LIMIT_ENABLED
+        value: "True"
+      - key: SUBMISSION_RATE_LIMIT
+        value: "15/minute"
+      - key: DEFAULT_RATE_LIMIT
+        value: "60/minute"
+      - key: OPENAI_API_KEY
+        sync: false

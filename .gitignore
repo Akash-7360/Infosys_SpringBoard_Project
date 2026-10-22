@@ -1,0 +1,55 @@
+# ==========================================
+# Operating System & Editor Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ==========================================
+# Environments & Secrets
+# ==========================================
+.env
+.env.local
+*.env
+!.env.example
+
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
+__pycache__/
+*.py[cod]
+.Python
+env/
+venv/
+.venv/
+.pytest_cache/
+
+# ==========================================
+# Local Databases & Vector Stores
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+chroma_db/
+**/chroma_db/
+
+# ==========================================
+# Node & Next.js Build Outputs
+# ==========================================
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+**/out/
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+*.log
